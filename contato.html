@@ -18,24 +18,31 @@
 
     <h1>Entre em contato comigo</h1>
 
-    <form>
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome">
-        <br>
-        <br>
-        <label for="email">E-mail:</label>
-        <input type="email" id="email">
-        <br>
-        <br>
-        <label for="assunto">Assunto:</label> <br>
-        <textarea name="assunto" id="assunto" cols="60" rows="5"></textarea>
-        <br>
-        <br>
-        <button class="sty-button">Enviar</button>
-    </form>
+    <div>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" onkeyup="validaNome()">
+            <div id="txtNome"></div>
+            <br>
+            <br>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" onkeyup="validaEmail()">
+            <div id="txtEmail"></div>
+            <br>
+            <br>
+            <label for="assunto">Assunto:</label> <br>
+            <textarea name="assunto" id="assunto" cols="60" rows="5" onkeyup="validaAssunto()"></textarea>
+            <div id="txtAssunto"></div>
+            <br>
+            <br>
+            <button class="sty-button" onclick="enviar()">Enviar</button>
+        </form>
+    </div>
+    
 
     <h2>Endereço:</h2>
 
+    <div>
     <p>Av. República do Chile, 330</p>
     <p>Rio de Janeiro - RJ</p>
 
@@ -47,6 +54,12 @@
     allowfullscreen="" 
     loading="lazy" 
     referrerpolicy="no-referrer-when-downgrade"
+    onmousemove="mapaZoom()"
+    onmouseout="mapaNormal()"
+    id="mapa"
     ></iframe>
+    </div>
+
+    <script src="assets/js/scripts.js"></script>
 </body>
 </html>
